@@ -146,8 +146,6 @@ class _HomePageState extends State<HomePage> {
   //   Color.fromARGB(0xFF, 0x00, 0x0, 0x0FF),
   // ];
 
-  
-
   final List<Color> _colours = [
     App.scheme.background,
     App.scheme.tertiary,
