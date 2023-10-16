@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:sand_piles_app/home_page.dart';
 
 class App extends StatelessWidget {
+  static final ColorScheme scheme = ColorScheme.fromSeed(
+    seedColor: const Color.fromARGB(0xFF, 0xCC, 0x33, 0xFF),
+  );
+
   const App({super.key});
 
   @override
@@ -9,7 +13,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       title: "Sand Piles",
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: scheme,
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:main_thread_processor/main_thread_processor.dart';
 import 'package:sand_piles/sand_piles.dart' as sp;
+import 'package:sand_piles_app/app.dart';
 
 class _ToppleTask implements Task {
   _ToppleTask(this.pageState);
@@ -79,7 +80,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        backgroundColor: App.scheme.background,
         title: Text(widget.title),
         actions: [
           IconButton(
@@ -100,7 +101,10 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
       body: Center(
-        child: _draw(_sand, _HomePageState.row, _HomePageState.row),
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: _draw(_sand, _HomePageState.row, _HomePageState.row),
+        ),
       ),
       floatingActionButton: _pauseVisible
           ? FloatingActionButton(
@@ -117,6 +121,7 @@ class _HomePageState extends State<HomePage> {
 
     return GridView.count(
       mainAxisSpacing: 0,
+      crossAxisSpacing: 0,
       crossAxisCount: rows,
       children: [
         for (int i = 0; i < totalItems; i++)
@@ -134,11 +139,20 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  static const List<Color> _colours = [
-    Color.fromARGB(0xFF, 0xCC, 0x33, 0xFF),
-    Color.fromARGB(0xFF, 0x99, 0x26, 0xFF),
-    Color.fromARGB(0xFF, 0x52, 0x14, 0xFF),
-    Color.fromARGB(0xFF, 0x00, 0x0, 0x0FF),
+  // static const List<Color> _colours = [
+  //   Color.fromARGB(0xFF, 0xCC, 0x33, 0xFF),
+  //   Color.fromARGB(0xFF, 0x99, 0x26, 0xFF),
+  //   Color.fromARGB(0xFF, 0x52, 0x14, 0xFF),
+  //   Color.fromARGB(0xFF, 0x00, 0x0, 0x0FF),
+  // ];
+
+  
+
+  final List<Color> _colours = [
+    App.scheme.background,
+    App.scheme.tertiary,
+    App.scheme.secondary,
+    App.scheme.primary,
   ];
 
   Color color(int grains) {

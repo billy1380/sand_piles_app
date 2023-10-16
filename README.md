@@ -1,16 +1,15 @@
-# sand_piles_app
+# Sand piles app
 
-A new Flutter project.
+An exmaple of using the [sand_piles](https://github.com/billy1380/sand_piles) package.
 
-## Getting Started
+## Getting started
 
-This project is a starting point for a Flutter application.
+Clone the following repos:
 
-A few resources to get you started if this is your first Flutter project:
+- [sand_piles](https://github.com/billy1380/sand_piles)
+- [main_thread_processor](https://github.com/billy1380/main_thread_processor)
+- [willshex-dart](https://github.com/billy1380/willshex-dart)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+and have a play.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screen shot of sand piles running on Mac OS](screenshot.png "Screen shot")
