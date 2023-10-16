@@ -50,7 +50,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  static const int width = 600;
+  static const double width = 600;
 
   static const double sandDim = 10;
   static const int topplesPerFrame = 1;
@@ -73,7 +73,6 @@ class _HomePageState extends State<HomePage> {
     _toppleTask = _ToppleTask(this);
 
     _uniformClicked(false);
-    // _randomClicked();
   }
 
   @override
@@ -82,6 +81,23 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
         title: Text(widget.title),
+        actions: [
+          IconButton(
+            onPressed: () => _uniformClicked(false),
+            icon: const Icon(Icons.line_style),
+            tooltip: "Uniform",
+          ),
+          IconButton(
+            onPressed: _randomClicked,
+            icon: const Icon(Icons.line_axis),
+            tooltip: "Random",
+          ),
+          IconButton(
+            onPressed: () => _uniformClicked(true),
+            icon: const Icon(Icons.clear),
+            tooltip: "Clear",
+          ),
+        ],
       ),
       body: Center(
         child: _draw(_sand, _HomePageState.row, _HomePageState.row),
@@ -110,7 +126,7 @@ class _HomePageState extends State<HomePage> {
               width: sandDim,
               height: sandDim,
               child: GestureDetector(
-                onTap: () => _gridItemClicked(i),
+                onTap: _pauseVisible ? null : () => _gridItemClicked(i),
               ),
             ),
           ),
