@@ -126,7 +126,7 @@ class _HomePageState extends State<HomePage> {
               width: sandDim,
               height: sandDim,
               child: GestureDetector(
-                onTap: _pauseVisible ? null : () => _gridItemClicked(i),
+                onTap: () => _gridItemClicked(i),
               ),
             ),
           ),
